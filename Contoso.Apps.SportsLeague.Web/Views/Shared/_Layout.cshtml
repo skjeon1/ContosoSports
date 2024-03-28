@@ -1,0 +1,208 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Contoso Sports League">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="~/favicon.ico" />
+    <link rel="icon" type="image/png" href="~/favicon.png" />
+    <!--[if IE]>
+        <link rel="shortcut icon" href="~/favicon.ico">
+    <![endif]-->
+
+    <title>@ViewBag.Title - Contoso Sports League</title>
+
+    <link rel="stylesheet" href="~/css/vendor.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+
+    <!-- Paste your Application Insights code snippet here, making sure to insert your instrumentation key. -->
+    <script type="text/javascript">
+        !(function (cfg) { function e() { cfg.onInit && cfg.onInit(i) } var S, u, D, t, n, i, C = window, x = document, w = C.location, I = "script", b = "ingestionendpoint", E = "disableExceptionTracking", A = "ai.device."; "instrumentationKey"[S = "toLowerCase"](), u = "crossOrigin", D = "POST", t = "appInsightsSDK", n = cfg.name || "appInsights", (cfg.name || C[t]) && (C[t] = n), i = C[n] || function (l) { var d = !1, g = !1, f = { initialize: !0, queue: [], sv: "7", version: 2, config: l }; function m(e, t) { var n = {}, i = "Browser"; function a(e) { e = "" + e; return 1 === e.length ? "0" + e : e } return n[A + "id"] = i[S](), n[A + "type"] = i, n["ai.operation.name"] = w && w.pathname || "_unknown_", n["ai.internal.sdkVersion"] = "javascript:snippet_" + (f.sv || f.version), { time: (i = new Date).getUTCFullYear() + "-" + a(1 + i.getUTCMonth()) + "-" + a(i.getUTCDate()) + "T" + a(i.getUTCHours()) + ":" + a(i.getUTCMinutes()) + ":" + a(i.getUTCSeconds()) + "." + (i.getUTCMilliseconds() / 1e3).toFixed(3).slice(2, 5) + "Z", iKey: e, name: "Microsoft.ApplicationInsights." + e.replace(/-/g, "") + "." + t, sampleRate: 100, tags: n, data: { baseData: { ver: 2 } }, ver: 4, seq: "1", aiDataContract: undefined } } var h = -1, v = 0, y = ["js.monitor.azure.com", "js.cdn.applicationinsights.io", "js.cdn.monitor.azure.com", "js0.cdn.applicationinsights.io", "js0.cdn.monitor.azure.com", "js2.cdn.applicationinsights.io", "js2.cdn.monitor.azure.com", "az416426.vo.msecnd.net"], k = l.url || cfg.src; if (k) { if ((n = navigator) && (~(n = (n.userAgent || "").toLowerCase()).indexOf("msie") || ~n.indexOf("trident/")) && ~k.indexOf("ai.3") && (k = k.replace(/(\/)(ai\.3\.)([^\d]*)$/, function (e, t, n) { return t + "ai.2" + n })), !1 !== cfg.cr) for (var e = 0; e < y.length; e++)if (0 < k.indexOf(y[e])) { h = e; break } var i = function (e) { var a, t, n, i, o, r, s, c, p, u; f.queue = [], g || (0 <= h && v + 1 < y.length ? (a = (h + v + 1) % y.length, T(k.replace(/^(.*\/\/)([\w\.]*)(\/.*)$/, function (e, t, n, i) { return t + y[a] + i })), v += 1) : (d = g = !0, o = k, c = (p = function () { var e, t = {}, n = l.connectionString; if (n) for (var i = n.split(";"), a = 0; a < i.length; a++) { var o = i[a].split("="); 2 === o.length && (t[o[0][S]()] = o[1]) } return t[b] || (e = (n = t.endpointsuffix) ? t.location : null, t[b] = "https://" + (e ? e + "." : "") + "dc." + (n || "services.visualstudio.com")), t }()).instrumentationkey || l.instrumentationKey || "", p = (p = p[b]) ? p + "/v2/track" : l.endpointUrl, (u = []).push((t = "SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)", n = o, r = p, (s = (i = m(c, "Exception")).data).baseType = "ExceptionData", s.baseData.exceptions = [{ typeName: "SDKLoadFailed", message: t.replace(/\./g, "-"), hasFullStack: !1, stack: t + "\nSnippet failed to load [" + n + "] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: " + (w && w.pathname || "_unknown_") + "\nEndpoint: " + r, parsedStack: [] }], i)), u.push((s = o, t = p, (r = (n = m(c, "Message")).data).baseType = "MessageData", (i = r.baseData).message = 'AI (Internal): 99 message:"' + ("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) (" + s + ")").replace(/\"/g, "") + '"', i.properties = { endpoint: t }, n)), o = u, c = p, JSON && ((r = C.fetch) && !cfg.useXhr ? r(c, { method: D, body: JSON.stringify(o), mode: "cors" }) : XMLHttpRequest && ((s = new XMLHttpRequest).open(D, c), s.setRequestHeader("Content-type", "application/json"), s.send(JSON.stringify(o)))))) }, a = function (e, t) { g || setTimeout(function () { !t && f.core || i() }, 500), d = !1 }, T = function (e) { var n = x.createElement(I), e = (n.src = e, cfg[u]); return !e && "" !== e || "undefined" == n[u] || (n[u] = e), n.onload = a, n.onerror = i, n.onreadystatechange = function (e, t) { "loaded" !== n.readyState && "complete" !== n.readyState || a(0, t) }, cfg.ld && cfg.ld < 0 ? x.getElementsByTagName("head")[0].appendChild(n) : setTimeout(function () { x.getElementsByTagName(I)[0].parentNode.appendChild(n) }, cfg.ld || 0), n }; T(k) } try { f.cookie = x.cookie } catch (p) { } function t(e) { for (; e.length;)!function (t) { f[t] = function () { var e = arguments; d || f.queue.push(function () { f[t].apply(f, e) }) } }(e.pop()) } var r, s, n = "track", o = "TrackPage", c = "TrackEvent", n = (t([n + "Event", n + "PageView", n + "Exception", n + "Trace", n + "DependencyData", n + "Metric", n + "PageViewPerformance", "start" + o, "stop" + o, "start" + c, "stop" + c, "addTelemetryInitializer", "setAuthenticatedUserContext", "clearAuthenticatedUserContext", "flush"]), f.SeverityLevel = { Verbose: 0, Information: 1, Warning: 2, Error: 3, Critical: 4 }, (l.extensionConfig || {}).ApplicationInsightsAnalytics || {}); return !0 !== l[E] && !0 !== n[E] && (t(["_" + (r = "onerror")]), s = C[r], C[r] = function (e, t, n, i, a) { var o = s && s(e, t, n, i, a); return !0 !== o && f["_" + r]({ message: e, url: t, lineNumber: n, columnNumber: i, error: a, evt: C.event }), o }, l.autoExceptionInstrumented = !0), f }(cfg.cfg), (C[n] = i).queue && 0 === i.queue.length ? (i.queue.push(e), i.trackPageView({})) : e(); })({
+            src: "https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js",
+            // name: "appInsights",
+            // ld: 0,
+            // useXhr: 1,
+            crossOrigin: "anonymous",
+            // onInit: null,
+            // cr: 0,
+            cfg: { // Application Insights Configuration
+                connectionString: "963e6bd1-4cd7-4754-ad8e-bc6c85b9de9f"
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="page_overlay">
+        <div class="loader-inner ball-scale-multiple">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="wrapper-body">
+        <header class="s-header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="header-top-left">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                        <div class="header-top-right">
+                            <a href="#" class="top-wrap"><span class="icon-phone">Call today: </span> (999) 777-8080</a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div> <!--  End of header top   -->
+            <div class="menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="header-top-left">
+                            <a href="@Url.Action("Index","Home")" class="logo">
+                                <img src="@Url.Content("~/Images/logo.png")" alt="logo-image">
+                            </a>
+                        </div>
+                        <div class="header-top-right">
+                            <nav class="navbar">
+                                <div class="nav-wrapper">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div class="overlay"></div>
+                                    <div class="nav-menu">
+                                        <a href="#" class="close">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                        <ul class="nav navbar-nav menu-bar">
+                                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                            <li><a href="#">League Members</a></li>
+                                            <li><a href="#">Locations</a></li>
+                                            <li class="dropdown">
+                                                @Html.ActionLink("Store", "Index", "Store")
+                                                <ul class="submenu">
+                                                    <li>
+                                                        @Html.ActionLink("Shopping Cart", "Index", "Cart")
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Blog</a></li>
+                                            <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                                            <li>
+                                                <a href="#" class="search-box-tablet"><i class="fa fa-search"></i></a>
+                                                <input type="text" placeholder="Search" class=" search-box-top">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>  <!-- End of header right -->
+                    </div>
+                </div>
+            </div> <!-- End of menu -->
+            @RenderSection("HeaderOverlay", required: false)
+
+            @*Example HeaderOverlay section content:
+                <div class="button-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <a href="#" class="btn-content pull-right">Contoso Home</a>
+                        </div>
+                    </div>
+                </div>*@
+        </header>
+        <!-- End of header -->
+        @* The content within the RenderBody (views) should be wrapped in a <section> tag *@
+        @RenderBody()
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="row left">
+                        <div class="pages">
+                            <h4>Pages</h4>
+                            <ul>
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li><a href="#">League Members</a></li>
+                                <li><a href="#">Locations</a></li>
+                                <li>@Html.ActionLink("Store", "Index", "Store")</li>
+                                <li><a href="#">Blog</a></li>
+                                <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row right">
+                        <div class="contact">
+                            <h4>Contact us</h4>
+                            <p>7401 164th Ave NE<br />Redmond, WA 98052</p>
+                            <p>Phone: (555) 555-8000<br />Mail: <a href="mailto:contact@contoso.com">contact@contoso.com</a></p>
+                        </div>
+                        <div class="recent">
+                            <h4>Recent Blog Posts</h4>
+                            <div class="figure row">
+                                <div>
+                                    <img src="@Url.Content("~/Images/photo/soccer.jpg")" alt="image">
+                                </div>
+                                <div class="figcaption">
+                                    <h5 class="heading"><a href="#">New league sign-ups coming up</a></h5>
+                                    <h5 class="date">July 7, 2015</h5>
+                                    <p>Lorem Ipsum sit amit...</p>
+                                </div>
+                            </div>
+                            <div class="figure row">
+                                <div>
+                                    <img src="@Url.Content("~/Images/photo/mens-volleyball.jpg")" height="73" width="83" alt="">
+                                    >
+                                </div>
+                                <div class="figcaption">
+                                    <h5 class="heading"><a href="">Store opening in Seattle</a></h5>
+                                    <h5 class="date">June 29, 2015</h5>
+                                    <p>Lorem Ipsum is the bomb...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h6>&copy; @DateTime.Now.Year -  Contoso Sports League</h6>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="~/js/jquery-validate.js"></script>
+    <script src="~/js/jquery-validate.unobtrusive.js"></script>
+    <script src="~/js/vendor/modernizr.js"></script>
+    <script src="~/js/vendor.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/site.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        // Application Insights page tracking:
+        var appInsights = window.appInsights || function (config) {
+            function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
+        }({
+            instrumentationKey: "{instrumentation-key}"
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+
+</body>
+</html>
