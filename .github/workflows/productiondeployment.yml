@@ -141,9 +141,10 @@ jobs:
     # Deploy to Azure App Service
     - name: 'Deploy offers API'
       uses: azure/webapps-deploy@v2
-      with: app-name: ${{ env.AZURE_API_OFFERS_NAME }}
-      publish-profile: ${{ env.AZURE_API_OFFERS_PUBLISH_PROFILE }}
-      package: './offerapideploy'
+      with:
+        app-name: ${{ env.AZURE_API_OFFERS_NAME }}
+        publish-profile: ${{ env.AZURE_API_OFFERS_PUBLISH_PROFILE }}
+        package: './offerapideploy'
     
   # Build and deploy the PDF receipt generation function app using the publish profile
   build-and-deploy-pdffunctionapp:
