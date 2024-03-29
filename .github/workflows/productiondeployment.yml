@@ -26,13 +26,12 @@ env:
   
 # Jobs define the actions that take place when code is pushed to the main branch
 jobs:
-
   # Build and deploy the E-Commerce Web Application using the Publish Profile
   build-and-deploy-webapp:
     runs-on: ubuntu-latest
-    steps:
-    # Checkout the repo
-    - uses: actions/checkout@main
+      steps:
+        # Checkout the repo
+        - uses: actions/checkout@main
     
     # Setup .NET Core SDK
     - name: Setup .NET Core
