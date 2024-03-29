@@ -150,8 +150,8 @@ jobs:
   build-and-deploy-pdffunctionapp:
   runs-on: ubuntu-latest
   steps:
-  # Checkout the repo
-  - uses: actions/checkout@main
+    # Checkout the repo
+    - uses: actions/checkout@main
   
   # Setup .NET Core SDK
   - name: Setup .NET Core
