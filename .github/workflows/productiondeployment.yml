@@ -29,26 +29,23 @@ jobs:
   # Build and deploy the E-Commerce Web Application using the Publish Profile
   build-and-deploy-webapp:
     runs-on: ubuntu-latest
-      steps:
-        # Checkout the repo
-        - uses: actions/checkout@main
-    
-        # Setup .NET Core SDK
-        - name: Setup .NET Core
-          uses: actions/setup-dotnet@v1
-          with:
-            dotnet-version: ${{ env.DOTNET_VERSION }}
-        
-    # Run dotnet build and publish on the project
-    - name: dotnet build web portal and publish
-      run: |
-        dotnet build ${{ env.AZURE_WEBAPP_PROJECT_NAME }} --configuration Release
-        dotnet publish ${{ env.AZURE_WEBAPP_PROJECT_NAME }} -c Release -o './webdeploy'
-        
-    # Deploy to Azure Application Service
-    - name: 'Deploy public web portal'
-      uses: azure/webapps-deploy@v2
-      with:
+    steps:
+      # Checkout the repo
+      - uses: actions/checkout@main
+      # Setup .NET Core SDK
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      # Run dotnet build and publish on the project
+      - name: dotnet build web portal and publish
+        run: |
+          dotnet build ${{ env.AZURE_WEBAPP_PROJECT_NAME }} --configuration Release
+          dotnet publish ${{ env.AZURE_WEBAPP_PROJECT_NAME }} -c Release -o './webdeploy'
+      # Deploy to Azure Application Service
+      - name: 'Deploy public web portal'
+        uses: azure/webapps-deploy@v2
+        with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: './webdeploy'
@@ -147,25 +144,23 @@ jobs:
     
   # Build and deploy the PDF receipt generation function app using the publish profile
   build-and-deploy-pdffunctionapp:
-  runs-on: ubuntu-latest
-  steps:
+    runs-on: ubuntu-latest
+    steps:
     # Checkout the repo
     - uses: actions/checkout@main
-  
-  # Setup .NET Core SDK
-  - name: Setup .NET Core
-    uses: actions/setup-dotnet@v1
-    with:
-      dotnet-version: ${{ env.DOTNET_VERSION }}
-      
-  # Run dotnet build and publish on the project
-  - name: dotnet build web portal and publish
-    run: |
-      dotnet build ${{ env.AZURE_FUNCTIONAPP_PROJECT_NAME }} --configuration Release
-      dotnet publish ${{ env.AZURE_FUNCTIONAPP_PROJECT_NAME }} -c Release -o './pdfappdeploy'
-  - name: 'Deploy to Azure Function App service'
-    uses: Azure/functions-action@v1
-    with:
+    # Setup .NET Core SDK
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+      dotnet-version: ${{ env.DOTNET_VERSION }}  
+    # Run dotnet build and publish on the project
+    - name: dotnet build web portal and publish
+      run: |
+        dotnet build ${{ env.AZURE_FUNCTIONAPP_PROJECT_NAME }} --configuration Release
+        dotnet publish ${{ env.AZURE_FUNCTIONAPP_PROJECT_NAME }} -c Release -o './pdfappdeploy'
+    - name: 'Deploy to Azure Function App service'
+      uses: Azure/functions-action@v1
+      with:
       app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
       package: './pdfappdeploy'
       publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
