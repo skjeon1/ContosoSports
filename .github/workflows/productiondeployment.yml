@@ -117,30 +117,30 @@ jobs:
 
   # Build and deploy the Offer API using the Publish Profile
   build-and-deploy-offer-api:
-  runs-on: ubuntu-latest
-  steps:
-    # Checkout the repo
-    - uses: actions/checkout@main
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repo
+      - uses: actions/checkout@main
 
-    # Setup .NET Core SDK (fix indentation here)
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
+      # Setup .NET Core SDK (fix indentation here)
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    # Run dotnet build and publish on the project
-    - name: dotnet build web portal and publish
-      run: |
-        dotnet build ${{ env.AZURE_API_OFFERS_PROJECT_NAME }} --configuration Release
-        dotnet publish ${{ env.AZURE_API_OFFERS_PROJECT_NAME }} -c Release -o './offerapideploy'
+      # Run dotnet build and publish on the project
+      - name: dotnet build web portal and publish
+        run: |
+          dotnet build ${{ env.AZURE_API_OFFERS_PROJECT_NAME }} --configuration Release
+          dotnet publish ${{ env.AZURE_API_OFFERS_PROJECT_NAME }} -c Release -o './offerapideploy'
 
-    # Deploy to Azure App Service
-    - name: "Deploy offers API"
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: ${{ env.AZURE_API_OFFERS_NAME }}
-        publish-profile: ${{ env.AZURE_API_OFFERS_PUBLISH_PROFILE }}
-        package: "./offerapideploy"
+      # Deploy to Azure App Service
+      - name: "Deploy offers API"
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_API_OFFERS_NAME }}
+          publish-profile: ${{ env.AZURE_API_OFFERS_PUBLISH_PROFILE }}
+          package: "./offerapideploy"
 
   # Build and deploy the PDF receipt generation function app using the publish profile
   build-and-deploy-pdffunctionapp:
