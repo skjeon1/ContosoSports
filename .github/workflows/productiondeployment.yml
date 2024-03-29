@@ -46,9 +46,9 @@ jobs:
       - name: "Deploy public web portal"
         uses: azure/webapps-deploy@v2
         with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: "./webdeploy"
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: "./webdeploy"
 
   # Build and deploy the Call Center admin using the Service Principal credentials
   build-and-deploy-admin:
